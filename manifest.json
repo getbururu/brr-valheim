@@ -9,7 +9,7 @@
   "authors": ["Bururu"],
   "license": "MIT",
   "summary": "Haptics, adaptive triggers and lights for Valheim.",
-  "homepage": "https://github.com/getbururu/mod-valheim",
+  "homepage": "https://github.com/getbururu/brr-valheim",
   "icon": "target",
 
   "games": {

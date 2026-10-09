@@ -28,7 +28,7 @@ The mod can add them once Bururu reads those bars.
 
 ## Install
 
-In Bururu, open **Mods**, then **Browse**, and click **Install** on Valheim. Or download `valheim-<version>.brr` from [Releases](https://github.com/getbururu/mod-valheim/releases) and use **Install from file...** on the **Mods** page.
+In Bururu, open **Mods**, then **Browse**, and click **Install** on Valheim. Or download `valheim-<version>.brr` from [Releases](https://github.com/getbururu/brr-valheim/releases) and use **Install from file...** on the **Mods** page.
 
 ## Set up
 
@@ -100,7 +100,7 @@ Bururu's modding guide, in the `docs\modding` folder next to `Bururu.exe`, expla
 
 ## Working on this mod
 
-- Clone it into Bururu's `mods` folder, in a folder named after the mod's id: `git clone https://github.com/getbururu/mod-valheim mods\valheim`. Bururu skips `.git` and `.github`, so the clone loads as it is.
+- Clone it into Bururu's `mods` folder, in a folder named after the mod's id: `git clone https://github.com/getbururu/brr-valheim mods\valheim`. Bururu skips `.git` and `.github`, so the clone loads as it is.
 - The feels are written by hand. `.\brr feel render mods\valheim\feels\swing.feel.json --out swing.wav` writes one as a sound file.
 - `tests/` holds made-up recordings with what the mod does in them: `.\brr mod replay mods\valheim mods\valheim\tests\session.replay.jsonl` plays one and compares. They run with the default settings, so they cover Swing. `tests/player-log.sample.txt` is a sample of `Player.log` with the lines the mod looks for.
 - A `v<version>` tag runs [the release workflow](.github/workflows/release.yml), which packs the mod and publishes `valheim-<version>.brr` with `SHA256SUMS`. The tag must match `version` in `manifest.json`, and `CHANGELOG.md` needs a `## <version>` section.
