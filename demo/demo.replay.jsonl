@@ -1,0 +1,17 @@
+{"replay":1,"mod":"valheim","mod_version":"0.1.0","bururu":"0.11.0","start_unix_ms":1791648000000,"poll_ms":25}
+{"t_ms":0,"sensor":"game","running":true,"in_front":true}
+{"t_ms":0,"sensor":"log","raw":"10/09/2026 18:01:10: Loading main scene"}
+{"t_ms":500,"step":"Attack: a swing"}
+{"t_ms":500,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":650,"sensor":"pad","state":{}}
+{"t_ms":1500,"step":"Second attack: a swing"}
+{"t_ms":1500,"sensor":"pad","state":{"held":["r1"],"pressed":["r1"]}}
+{"t_ms":1600,"sensor":"pad","state":{}}
+{"t_ms":2500,"step":"Block"}
+{"t_ms":2500,"sensor":"pad","state":{"held":["l2"],"pressed":["l2"],"l2":255}}
+{"t_ms":3500,"sensor":"pad","state":{}}
+{"t_ms":4500,"step":"A raid starts"}
+{"t_ms":4500,"sensor":"log","raw":"10/09/2026 18:25:31: Random event set:army_eikthyr"}
+{"t_ms":8000,"step":"The night passes in bed"}
+{"t_ms":8000,"sensor":"log","raw":"10/09/2026 18:40:02: Time 3412.52, day:3    nextm:4590  skipspeed:98.12"}
+{"t_ms":11000,"sensor":"game","running":true,"in_front":true}

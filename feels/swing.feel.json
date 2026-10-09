@@ -1,0 +1,12 @@
+{
+  "feel": 1,
+  "name": "swing",
+  "kind": "shot",
+  "meta": { "description": "A soft swell as a weapon or a tool swings, stronger on the right." },
+  "voices": [
+    { "id": "v1", "type": "synth", "wave": "Sine", "f0_hz": 175, "f1_hz": 150,
+      "attack_ms": 30, "attack_curve": 2, "hold_ms": 25, "release_ms": 110, "release_curve": 2,
+      "level": 0.32, "left": 0.6, "right": 1 }
+  ],
+  "rumble": { "pattern": "once" }
+}

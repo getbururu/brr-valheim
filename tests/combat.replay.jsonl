@@ -1,0 +1,29 @@
+{"replay":1,"mod":"valheim","mod_version":"0.1.0","bururu":"0.11.0","start_unix_ms":1791648000000,"poll_ms":25}
+{"t_ms":0,"sensor":"game","running":true,"in_front":true}
+{"t_ms":0,"sensor":"log","raw":"10/09/2026 18:01:10: Loading main scene"}
+{"t_ms":500,"step":"Tap R2: a swing"}
+{"t_ms":500,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":650,"sensor":"pad","state":{}}
+{"t_ms":1500,"step":"Hold R2 for 2 s: one swing, no bow feels"}
+{"t_ms":1500,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":3500,"sensor":"pad","state":{}}
+{"t_ms":4000,"step":"R1, the second attack: a swing"}
+{"t_ms":4000,"sensor":"pad","state":{"held":["r1"],"pressed":["r1"]}}
+{"t_ms":4100,"sensor":"pad","state":{}}
+{"t_ms":5000,"step":"Hold L2 to block: a thud on the left"}
+{"t_ms":5000,"sensor":"pad","state":{"held":["l2"],"pressed":["l2"],"l2":255}}
+{"t_ms":7000,"sensor":"pad","state":{}}
+{"t_ms":7500,"step":"Block and attack together"}
+{"t_ms":7500,"sensor":"pad","state":{"held":["l2"],"pressed":["l2"],"l2":255}}
+{"t_ms":7800,"sensor":"pad","state":{"held":["l2","r2"],"pressed":["r2"],"l2":255,"r2":255}}
+{"t_ms":8000,"sensor":"pad","state":{"held":["l2"],"l2":255}}
+{"t_ms":8400,"sensor":"pad","state":{}}
+{"t_ms":9000,"step":"Valheim is not in front: the buttons play nothing"}
+{"t_ms":9000,"sensor":"game","running":true,"in_front":false}
+{"t_ms":9200,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":9400,"sensor":"pad","state":{}}
+{"t_ms":10000,"step":"Back in front"}
+{"t_ms":10000,"sensor":"game","running":true,"in_front":true}
+{"t_ms":10500,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":10600,"sensor":"pad","state":{}}
+{"t_ms":11000,"sensor":"game","running":true,"in_front":true}

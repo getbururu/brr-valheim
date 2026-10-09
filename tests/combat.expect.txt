@@ -1,0 +1,63 @@
+replay through valheim; valheim drives; ticks of 25 ms
+@ 0.000
+  init fact place "Unknown"  origin=lua:valheim/lua/session.lua:62
+  log Valheim started
+  read fact place "In a world"  origin=lua:valheim/lua/session.lua:19
+  facts running=true active=true menu=false context="in a world"
+  out L2 FEEDBACK [2 3] R2 WEAPON [4 6 2] light 255 110 20 @70
+  shown light=world l2=block_l2 r2=swing_r2
+# Tap R2: a swing
+@ 0.500
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 0.675
+  synth off off
+audio c1a9af79
+# Hold R2 for 2 s: one swing, no bow feels
+@ 1.500
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 1.675
+  synth off off
+audio 4eb5c379
+# R1, the second attack: a swing
+@ 4.000
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 4.175
+  synth off off
+audio c1a9af79
+# Hold L2 to block: a thud on the left
+@ 5.000
+  drive play block_raise side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:88
+  synth on on
+@ 5.125
+  synth off off
+audio a149573b
+# Block and attack together
+@ 7.500
+  drive play block_raise side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:88
+  synth on on
+@ 7.625
+  synth off off
+@ 7.800
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 7.975
+  synth off off
+audio 1e7b690b
+# Valheim is not in front: the buttons play nothing
+@ 9.000
+  facts running=true active=false menu=false context="in a world"
+  out handback
+# Back in front
+@ 10.000
+  facts running=true active=true menu=false context="in a world"
+  out L2 FEEDBACK [2 3] R2 WEAPON [4 6 2] light 255 110 20 @70
+@ 10.500
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 10.675
+  synth off off
+audio 29a46279
+end @ 12.000

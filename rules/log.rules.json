@@ -1,0 +1,13 @@
+// What Valheim's log says happened. The raid line is written on every PC
+// in the world; the sleep line only where the world runs, so the night
+// swell comes when you play alone or host the world.
+{
+  "format": 1,
+  "rules": {
+    // a raid starts: drums, and the lightbar blinks
+    "raid": { "on": "log:raid", "cooldown_ms": 10000,
+              "do": [ { "play": "raid" }, { "overlay": "raid" } ] },
+    // everyone is in bed and the night passes
+    "rested": { "on": "log:sleep", "cooldown_ms": 20000, "play": "rested" }
+  }
+}

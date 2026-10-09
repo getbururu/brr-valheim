@@ -1,0 +1,12 @@
+{
+  "feel": 1,
+  "name": "block_raise",
+  "kind": "shot",
+  "meta": { "description": "A light thud on the left as the shield or weapon comes up to block." },
+  "voices": [
+    { "id": "v1", "type": "synth", "wave": "Sine", "f0_hz": 160, "f1_hz": 140,
+      "attack_ms": 5, "hold_ms": 20, "release_ms": 80, "release_curve": 2,
+      "level": 0.3, "left": 1, "right": 0.5 }
+  ],
+  "rumble": { "pattern": "once" }
+}

@@ -1,0 +1,12 @@
+{
+  "feel": 1,
+  "name": "rested",
+  "kind": "shot",
+  "meta": { "description": "One slow, quiet swell as the night passes in bed." },
+  "voices": [
+    { "id": "v1", "type": "synth", "wave": "Sine", "f0_hz": 170, "f1_hz": 0,
+      "attack_ms": 700, "attack_curve": 2, "hold_ms": 150, "release_ms": 1100, "release_curve": 2,
+      "level": 0.28 }
+  ],
+  "rumble": { "pattern": "once" }
+}

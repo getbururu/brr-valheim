@@ -1,0 +1,28 @@
+{"replay":1,"mod":"valheim","mod_version":"0.1.0","bururu":"0.11.0","start_unix_ms":1791648000000,"poll_ms":25}
+{"t_ms":0,"sensor":"game","running":true,"in_front":true}
+{"t_ms":0,"sensor":"log","raw":"10/09/2026 18:00:00: Loading: Starting to load scene: start.unity (169d0000c03be07e9ad3af5893)"}
+{"t_ms":0,"sensor":"log","raw":"10/09/2026 18:00:02: Valheim version: 1.0.17 (network version 35)"}
+{"t_ms":0,"sensor":"log","raw":"10/09/2026 18:00:09: Starting music menu"}
+{"t_ms":500,"step":"The main menu: R2 plays nothing"}
+{"t_ms":500,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":600,"sensor":"pad","state":{}}
+{"t_ms":1000,"step":"A world loads"}
+{"t_ms":1000,"sensor":"log","raw":"10/09/2026 18:01:10: Loading main scene"}
+{"t_ms":1000,"sensor":"log","raw":"10/09/2026 18:01:11: Load world: redacted"}
+{"t_ms":1050,"sensor":"log","raw":"10/09/2026 18:01:19: Starting respawn"}
+{"t_ms":1050,"sensor":"log","raw":"10/09/2026 18:01:27: Spawned after 8.019993"}
+{"t_ms":2000,"step":"R2 swings"}
+{"t_ms":2000,"sensor":"pad","state":{"held":["r2"],"pressed":["r2"],"r2":255}}
+{"t_ms":2100,"sensor":"pad","state":{}}
+{"t_ms":3000,"step":"A raid starts: drums, and the lightbar blinks"}
+{"t_ms":3000,"sensor":"log","raw":"10/09/2026 18:25:31: Random event set:army_eikthyr"}
+{"t_ms":12000,"step":"Everyone is in bed: the night passes"}
+{"t_ms":12000,"sensor":"log","raw":"10/09/2026 18:40:02: Time 3412.52, day:3    nextm:4590  skipspeed:98.12"}
+{"t_ms":15000,"step":"The world saves: nothing plays"}
+{"t_ms":15000,"sensor":"log","raw":"10/09/2026 18:45:00: World saved ( 312.4ms )"}
+{"t_ms":16000,"step":"Back to the main menu"}
+{"t_ms":16000,"sensor":"log","raw":"10/09/2026 19:02:44: Net scene destroyed"}
+{"t_ms":16000,"sensor":"log","raw":"10/09/2026 19:02:44: Valheim version: 1.0.17 (network version 35)"}
+{"t_ms":17000,"step":"Valheim closes"}
+{"t_ms":17000,"sensor":"game","running":false,"in_front":false}
+{"t_ms":17500,"sensor":"game","running":false,"in_front":false}

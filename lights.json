@@ -1,0 +1,20 @@
+// The lightbar and the triggers in each situation. Colour and trigger
+// names are keys of the settings "colors" and "triggers". These rows show
+// only while the mod is active: in the main menu the controller rests.
+{
+  "format": 1,
+  "lightbar": {
+    "world": { "priority": 0, "color": "world", "bright": 0.35 }
+  },
+  "triggers": {
+    // R2 follows the attack feel; L2 is the block. Only while Valheim
+    // attacks with R2 (with R1, both triggers stay free)
+    "swing": { "priority": 10, "if": "settings.attack_button == 'r2' and settings.attack_feel == 'swing'", "r2": "swing_r2" },
+    "bow":   { "priority": 10, "if": "settings.attack_button == 'r2' and settings.attack_feel == 'bow'", "r2": "bow_r2" },
+    "block": { "priority": 10, "if": "settings.attack_button == 'r2'", "l2": "block_l2" }
+  },
+  "overlays": {
+    // started by the raid rule
+    "raid": { "layer": "lightbar", "color": "raid", "ms": 8000, "blink_hz": 2, "priority": 10 }
+  }
+}

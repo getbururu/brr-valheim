@@ -1,0 +1,250 @@
+// Valheim's settings: types, ranges, defaults, words and pages.
+{
+  "schema": 1,
+  "settings": {
+    "log_dir": {
+      "type": "path",
+      "default": "",
+      "role": "path",
+      "restart": "session",
+      "label": "Log folder",
+      "help": "Where Valheim writes Player.log. Empty: Valheim's standard folder. Applies with Apply now.",
+      "placeholder": "Valheim's standard folder"
+    },
+    "attack_button": {
+      "type": "enum",
+      "default": "r2",
+      "label": "Attack button",
+      "help": "R2: Valheim attacks with R2 and blocks with L2.",
+      "options": { "r2": "R2", "r1": "R1" },
+      "by_value": {
+        "r2": "R2: Valheim attacks with R2 and blocks with L2.",
+        "r1": "R1: Valheim attacks with R1 and blocks with L1. The triggers then get no effects."
+      }
+    },
+    "attack_feel": {
+      "type": "enum",
+      "default": "swing",
+      "needs": "haptics",
+      "label": "Attack feel",
+      "help": "Swing: a soft swell each time you attack.",
+      "options": { "swing": "Swing", "bow": "Bow", "off": "Off" },
+      "by_value": {
+        "swing": "Swing: a soft swell each time you attack.",
+        "bow": "Bow: holding the attack button draws the bow. A click as the draw starts, a tick when it is full, and the string's snap when you let go. R2 gets heavier as you pull it.",
+        "off": "Off: nothing."
+      }
+    },
+    "bow_draw_ms": {
+      "type": "int",
+      "default": 1200,
+      "min": 300,
+      "max": 4000,
+      "step": 50,
+      "unit": "ms",
+      "needs": "haptics",
+      "label": "Bow draw time",
+      "help": "How long your bow takes to draw fully, for the tick at full draw. A higher bow skill draws faster."
+    },
+    "haptics_gain": {
+      "type": "map",
+      "role": "feel_gain",
+      "needs": "haptics",
+      "of": { "type": "float", "min": 0, "max": 2, "step": 0.05, "unit": "%", "scale": 100 },
+      "default": {
+        "swing": 1,
+        "bow_nock": 1,
+        "bow_full": 1,
+        "bow_release": 1,
+        "block_raise": 1,
+        "raid": 1,
+        "rested": 1
+      },
+      "label": "Effect levels",
+      "help": "The level of each effect. 100% is normal, 0% turns it off.",
+      "groups": {
+        "combat": { "title": "Fighting", "order": 1 },
+        "world": { "title": "The world", "order": 2 }
+      },
+      "entries": {
+        "swing": { "label": "Swing", "help": "Each attack, with the Swing attack feel.", "group": "combat" },
+        "bow_nock": { "label": "Bow: draw", "help": "A click as the draw starts.", "group": "combat" },
+        "bow_full": { "label": "Bow: full draw", "help": "A tick when the draw is full.", "group": "combat" },
+        "bow_release": { "label": "Bow: release", "help": "The string's snap when you let go.", "group": "combat" },
+        "block_raise": { "label": "Block", "help": "A light thud as you raise your block.", "group": "combat" },
+        "raid": { "label": "Raid", "help": "Drums as a raid starts. With other players, also for a raid at someone else's base.", "group": "world" },
+        "rested": { "label": "Sleep", "help": "A slow swell as the night passes in bed. Only when you play alone or host the world.", "group": "world" }
+      }
+    },
+    "colors": {
+      "type": "map",
+      "role": "color_table",
+      "needs": "lightbar",
+      "of": { "type": "rgb", "min": 0, "max": 255 },
+      "default": {
+        "world": [255, 110, 20],
+        "raid": [255, 20, 0]
+      },
+      "label": "Lightbar colours",
+      "entries": {
+        "world": { "label": "In a world", "help": "A dim fire colour while you play.", "pattern": "Steady, dim" },
+        "raid": { "label": "Raid", "help": "Blinks for 8 s as a raid starts.", "pattern": "Blink" }
+      }
+    },
+    "triggers": {
+      "type": "map",
+      "role": "trigger_table",
+      "needs": "triggers",
+      "of": { "type": "trigger" },
+      "default": {
+        "swing_r2": { "mode": "WEAPON", "params": [4, 6, 2] },
+        "bow_r2": { "mode": "SLOPE_FEEDBACK", "params": [2, 8, 1, 6] },
+        "block_l2": { "mode": "FEEDBACK", "params": [2, 3] }
+      },
+      "label": "Trigger situations",
+      "entries": {
+        "swing_r2": {
+          "label": "Attack R2",
+          "help": "R2 with the Swing attack feel: a light click.",
+          "card": "Right trigger",
+          "row": "Swing"
+        },
+        "bow_r2": {
+          "label": "Bow R2",
+          "help": "R2 with the Bow attack feel: heavier the further you pull.",
+          "card": "Right trigger",
+          "row": "Bow"
+        },
+        "block_l2": {
+          "label": "Block L2",
+          "help": "L2, the block, in a world.",
+          "card": "Left trigger",
+          "row": "Block"
+        }
+      }
+    },
+    "rumble": {
+      "type": "map",
+      "role": "feel_rumble",
+      "needs": "rumble",
+      "of": { "type": "rumble", "min": 0, "max": 1, "step": 0.01 },
+      "default": {
+        "swing": { "left": 0.1, "right": 0.2, "ms": 70 },
+        "bow_nock": { "left": 0, "right": 0.12, "ms": 40 },
+        "bow_full": { "left": 0.1, "right": 0.15, "ms": 50 },
+        "bow_release": { "left": 0.25, "right": 0.4, "ms": 90 },
+        "block_raise": { "left": 0.25, "right": 0.1, "ms": 70 },
+        "raid": { "left": 0.4, "right": 0.4, "ms": 250 },
+        "rested": { "left": 0.15, "right": 0.15, "ms": 600 }
+      },
+      "label": "Rumble fallback",
+      "help": "The rumble of each effect: the strength of the left and right motor in %, and the length in ms. Bururu rumbles only in Rumble mode. A length of 0 turns one off.",
+      "groups": {
+        "combat": { "title": "Fighting", "order": 1 },
+        "world": { "title": "The world", "order": 2 }
+      },
+      "entries": {
+        "swing": { "label": "Swing", "help": "Each attack, with the Swing attack feel.", "group": "combat" },
+        "bow_nock": { "label": "Bow: draw", "help": "A click as the draw starts.", "group": "combat" },
+        "bow_full": { "label": "Bow: full draw", "help": "A tick when the draw is full.", "group": "combat" },
+        "bow_release": { "label": "Bow: release", "help": "The string's snap when you let go.", "group": "combat" },
+        "block_raise": { "label": "Block", "help": "A light thud as you raise your block.", "group": "combat" },
+        "raid": { "label": "Raid", "help": "Drums as a raid starts.", "group": "world" },
+        "rested": { "label": "Sleep", "help": "A slow swell as the night passes in bed.", "group": "world" }
+      }
+    }
+  },
+  "pages": {
+    "effects": {
+      "title": "Effects",
+      "icon": "waves",
+      "order": 1,
+      "tabs": {
+        "haptics": {
+          "title": "Haptics",
+          "order": 1,
+          "lead": "How the controller's haptics answer the game.",
+          "cards": {
+            "attack": {
+              "title": "Attacks",
+              "order": 1,
+              "rows": [
+                { "widget": "choice", "path": "attack_feel" },
+                { "widget": "slider", "path": "bow_draw_ms" }
+              ]
+            },
+            "fine_tune": {
+              "title": "Fine-tune",
+              "order": 2,
+              "rows": [
+                { "widget": "levels", "path": "haptics_gain" },
+                { "widget": "rumble-table", "path": "rumble" }
+              ]
+            }
+          }
+        },
+        "triggers": {
+          "title": "Triggers",
+          "order": 2,
+          "lead": "The resistance of R2 and L2 in each situation.",
+          "cards": {
+            "situations": {
+              "order": 1,
+              "rows": [
+                { "widget": "situations", "path": "triggers", "pairs": [["swing_r2", "block_l2"]] }
+              ]
+            }
+          }
+        },
+        "lights": {
+          "title": "Lights",
+          "order": 3,
+          "lead": "The lightbar.",
+          "cards": {
+            "colors": {
+              "title": "Lightbar colours",
+              "order": 1,
+              "rows": [
+                { "widget": "color-grid", "path": "colors", "preview": "pad" }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "icon": "gear",
+      "order": 2,
+      "cards": {
+        "controls": {
+          "title": "Valheim's controls",
+          "order": 1,
+          "rows": [
+            { "widget": "choice", "path": "attack_button" }
+          ]
+        },
+        "files": {
+          "title": "Valheim's files",
+          "order": 2,
+          "rows": [
+            { "widget": "path", "path": "log_dir" }
+          ]
+        }
+      }
+    }
+  },
+  "live": {
+    "facts": {
+      "place": { "label": "Where", "order": 1 }
+    }
+  },
+  "setup": {
+    "log": {
+      "label": "Valheim's log",
+      "fact": "log_ok",
+      "order": 1,
+      "help": "Bururu reads Player.log to know when you are in a world. Valheim writes it from its first start."
+    }
+  }
+}

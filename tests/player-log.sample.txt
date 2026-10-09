@@ -1,0 +1,31 @@
+# A sample of Valheim's Player.log, for reading the tests. It is put
+# together, not copied from one session: each line has the form Valheim
+# writes (from logs players posted and from the game's code), but names,
+# ids and numbers are examples. Lines marked > are the ones the mod reads;
+# the rest is the game's noise, which the mod ignores.
+#
+#   %USERPROFILE%\AppData\LocalLow\IronGate\Valheim\Player.log
+#   Linux: ~/.config/unity3d/IronGate/Valheim/Player.log
+#
+  10/09/2026 18:00:00: Loading: Starting to load scene: start.unity (169d0000c03be07e9ad3af5893)
+> 10/09/2026 18:00:02: Valheim version: 1.0.17 (network version 35)
+  10/09/2026 18:00:09: Starting music menu
+> 10/09/2026 18:01:10: Loading main scene
+  10/09/2026 18:01:11: Load world: redacted
+  10/09/2026 18:01:19: Starting respawn
+  10/09/2026 18:01:27: Spawned after 8.019993
+  10/09/2026 18:01:29: Starting music meadows
+> 10/09/2026 18:25:31: Random event set:army_eikthyr
+> 10/09/2026 18:40:02: Time 3412.52, day:3    nextm:4590  skipspeed:98.12
+  10/09/2026 18:45:00: World saved ( 312.4ms )
+> 10/09/2026 19:02:44: Net scene destroyed
+> 10/09/2026 19:02:44: Valheim version: 1.0.17 (network version 35)
+#
+# Joining someone else's world instead writes, after Loading main scene:
+#
+  10/09/2026 18:01:10: Connecting to server with PlayFab-backend redacted
+  10/09/2026 18:01:14: Joining server 'redacted' at PlayFab network redacted
+#
+# There the raid line comes too (the world's host sends the raid to every
+# player), but the sleep line does not: only the PC where the world runs
+# writes it.

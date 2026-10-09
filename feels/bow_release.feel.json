@@ -1,0 +1,15 @@
+{
+  "feel": 1,
+  "name": "bow_release",
+  "kind": "shot",
+  "meta": { "description": "The string's snap as the arrow flies, with a short tail; weaker after a short draw." },
+  "voices": [
+    { "id": "snap", "type": "synth", "wave": "Sine", "f0_hz": 200, "f1_hz": 150,
+      "attack_ms": 1, "hold_ms": 12, "decay_ms": 90, "decay_curve": 2,
+      "level": 0.6, "left": 0.7, "right": 1 },
+    { "id": "tail", "type": "synth", "wave": "Sine", "f0_hz": 170, "f1_hz": 0,
+      "delay_ms": 20, "attack_ms": 3, "decay_ms": 160, "decay_curve": 2,
+      "level": 0.22, "left": 0.7, "right": 1 }
+  ],
+  "rumble": { "pattern": "once" }
+}

@@ -1,0 +1,55 @@
+// The Valheim mod.
+{
+  "manifest": 1,
+  "id": "valheim",
+  "name": "Valheim",
+  "version": "0.1.0",
+  "api": "0.11",
+  "kind": "game",
+  "authors": ["Bururu"],
+  "license": "MIT",
+  "summary": "Haptics, adaptive triggers and lights for Valheim.",
+  "homepage": "https://github.com/getbururu/mod-valheim",
+  "icon": "target",
+
+  "games": {
+    "valheim": {
+      "name": "Valheim",
+      "short_name": "Valheim",
+      "steam_app": 892970,
+      // Linux: the native build, or valheim.exe under Proton
+      "process": {
+        "windows": { "game": ["valheim.exe"] },
+        "linux":   { "game": ["valheim.x86_64", "valheim.exe"], "match": "cmdline" }
+      },
+      "stores": { "steam": [892970] },
+      "markers": ["valheim.exe", "valheim.x86_64"],
+      // Valheim reads the controller itself; on PC it rumbles DualShock and
+      // Xbox pads but drives no DualSense haptics or trigger effects
+      "virtual_pad": "game",
+      "native_dualsense": false,
+      "anti_cheat": { "kind": "none" }
+    }
+  },
+
+  // Unity writes Player.log here; Player-prev.log is the session before
+  "paths": {
+    "logs": { "path": "{Home}/AppData/LocalLow/IronGate/Valheim",
+              "linux": "{RoamingAppData}/unity3d/IronGate/Valheim",
+              "setting": "log_dir", "label": "Valheim's log" }
+  },
+
+  "dependencies": {},
+  "load_after": [], "load_before": [],
+
+  "entry": "lua/main.lua",
+  "demo": "demo/demo.replay.jsonl",
+  "feels": { "rumble_default": "none" },
+  "outputs": ["haptics", "rumble", "triggers", "lightbar"],
+  "permissions": { "files": ["logs"], "screen": false, "keyboard": false, "udp": [] },
+  "hooks": {
+    "attack@1": { "doc": "Before an attack feel plays (swing, bow_nock, bow_full or bow_release), with feel, level, held_ms and skip: change the feel or the level, or skip it." },
+    "state@1":  { "doc": "After each line of Valheim's log the mod reads (read only): where (menu, world or unknown) and the line's rule." }
+  },
+  "os": ["windows", "linux"]
+}

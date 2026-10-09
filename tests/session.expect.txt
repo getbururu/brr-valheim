@@ -1,0 +1,122 @@
+replay through valheim; valheim drives; ticks of 25 ms
+@ 0.000
+  init fact place "Unknown"  origin=lua:valheim/lua/session.lua:62
+  log Valheim started
+  read fact place "Main menu"  origin=lua:valheim/lua/session.lua:19
+  facts running=true active=false menu=false context="main menu"
+# The main menu: R2 plays nothing
+# A world loads
+@ 1.000
+  read fact place "In a world"  origin=lua:valheim/lua/session.lua:19
+  facts running=true active=true menu=false context="in a world"
+  out L2 FEEDBACK [2 3] R2 WEAPON [4 6 2] light 255 110 20 @70
+  shown light=world l2=block_l2 r2=swing_r2
+# R2 swings
+@ 2.000
+  drive play swing side=both scale=1 pan=0 amount=0 at=+0  origin=lua:valheim/lua/combat.lua:40
+  synth on on
+@ 2.175
+  synth off off
+audio c1a9af79
+# A raid starts: drums, and the lightbar blinks
+@ 3.000
+  read play raid side=both scale=1 pan=0 amount=0 at=+0  origin=rule:valheim/raid
+  read overlay valheim/raid  origin=rule:valheim/raid
+  out light 255 20 0 @200
+  shown light=raid l2=block_l2 r2=swing_r2
+  synth on on
+@ 3.250
+  out light 255 20 0 @0
+@ 3.325
+  synth off off
+@ 3.500
+  out light 255 20 0 @200
+@ 3.700
+  synth on on
+@ 3.750
+  out light 255 20 0 @0
+@ 4.000
+  out light 255 20 0 @200
+@ 4.025
+  synth off off
+@ 4.250
+  out light 255 20 0 @0
+@ 4.400
+  synth on on
+@ 4.500
+  out light 255 20 0 @200
+@ 4.750
+  out light 255 20 0 @0
+@ 4.775
+  synth off off
+@ 5.000
+  out light 255 20 0 @200
+@ 5.250
+  out light 255 20 0 @0
+@ 5.500
+  out light 255 20 0 @200
+@ 5.750
+  out light 255 20 0 @0
+@ 6.000
+  out light 255 20 0 @200
+@ 6.250
+  out light 255 20 0 @0
+@ 6.500
+  out light 255 20 0 @200
+@ 6.750
+  out light 255 20 0 @0
+@ 7.000
+  out light 255 20 0 @200
+@ 7.250
+  out light 255 20 0 @0
+@ 7.500
+  out light 255 20 0 @200
+@ 7.750
+  out light 255 20 0 @0
+@ 8.000
+  out light 255 20 0 @200
+@ 8.250
+  out light 255 20 0 @0
+@ 8.500
+  out light 255 20 0 @200
+@ 8.750
+  out light 255 20 0 @0
+@ 9.000
+  out light 255 20 0 @200
+@ 9.250
+  out light 255 20 0 @0
+@ 9.500
+  out light 255 20 0 @200
+@ 9.750
+  out light 255 20 0 @0
+@ 10.000
+  out light 255 20 0 @200
+@ 10.250
+  out light 255 20 0 @0
+@ 10.500
+  out light 255 20 0 @200
+@ 10.750
+  out light 255 20 0 @0
+@ 11.000
+  out light 255 110 20 @70
+  shown light=world l2=block_l2 r2=swing_r2
+audio 70304d79
+# Everyone is in bed: the night passes
+@ 12.000
+  read play rested side=both scale=1 pan=0 amount=0 at=+0  origin=rule:valheim/rested
+  synth on on
+@ 13.950
+  synth off off
+audio aa288591
+# The world saves: nothing plays
+# Back to the main menu
+@ 16.000
+  read fact place "Main menu"  origin=lua:valheim/lua/session.lua:19
+  facts running=true active=false menu=false context="main menu"
+  out handback
+# Valheim closes
+@ 18.150
+  log Valheim closed
+  read fact place "Unknown"  origin=lua:valheim/lua/session.lua:19
+  facts running=false active=false menu=false context="playing"
+end @ 18.500

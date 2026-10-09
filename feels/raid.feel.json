@@ -1,0 +1,15 @@
+{
+  "feel": 1,
+  "name": "raid",
+  "kind": "shot",
+  "meta": { "description": "Three slow drum swells as a raid starts." },
+  "voices": [
+    { "id": "d1", "type": "synth", "wave": "Sine", "f0_hz": 155, "f1_hz": 0,
+      "attack_ms": 25, "hold_ms": 40, "release_ms": 240, "release_curve": 2, "level": 0.45 },
+    { "id": "d2", "type": "synth", "wave": "Sine", "f0_hz": 155, "f1_hz": 0,
+      "delay_ms": 700, "attack_ms": 25, "hold_ms": 40, "release_ms": 240, "release_curve": 2, "level": 0.4 },
+    { "id": "d3", "type": "synth", "wave": "Sine", "f0_hz": 165, "f1_hz": 0,
+      "delay_ms": 1400, "attack_ms": 25, "hold_ms": 50, "release_ms": 300, "release_curve": 2, "level": 0.5 }
+  ],
+  "rumble": { "pattern": "repeat", "count": 3, "gap_ms": 700 }
+}

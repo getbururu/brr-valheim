@@ -1,0 +1,12 @@
+{
+  "feel": 1,
+  "name": "bow_nock",
+  "kind": "shot",
+  "meta": { "description": "A small click on the right as the arrow is nocked and the draw starts." },
+  "voices": [
+    { "id": "v1", "type": "synth", "wave": "Sine", "f0_hz": 220, "f1_hz": 190,
+      "attack_ms": 2, "decay_ms": 40, "decay_curve": 2,
+      "level": 0.22, "left": 0.4, "right": 1 }
+  ],
+  "rumble": { "pattern": "once" }
+}
